@@ -3,359 +3,428 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genii Investor Pitch Deck</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/theme/black.css">
+    <title>Genii - Building the Operating System for American Housing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#003399',
+                        'primary-dark': '#002266',
+                        'primary-light': '#0044CC',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --genii-blue: #003399;
-            --genii-white: #ffffff;
-            --genii-light-blue: #0055cc;
+        html {
+            scroll-behavior: smooth;
         }
-        
-        .reveal {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        .gradient-bg {
+            background: linear-gradient(135deg, #003399 0%, #0044CC 100%);
         }
-        
-        .reveal .slides {
-            text-align: left;
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
-        .reveal h1, .reveal h2, .reveal h3 {
-            color: var(--genii-white);
-            text-transform: none;
-            font-weight: 700;
-        }
-        
-        .reveal h1 {
-            font-size: 3.5em;
-            margin-bottom: 0.3em;
-        }
-        
-        .reveal h2 {
-            font-size: 2.5em;
-            margin-bottom: 0.5em;
-            border-bottom: 4px solid var(--genii-white);
-            padding-bottom: 0.3em;
-            display: inline-block;
-        }
-        
-        .reveal h3 {
-            font-size: 1.8em;
-            margin-bottom: 0.5em;
-            color: var(--genii-light-blue);
-        }
-        
-        .reveal p, .reveal ul, .reveal ol {
-            font-size: 1.3em;
-            line-height: 1.6;
-            color: var(--genii-white);
-        }
-        
-        .reveal ul {
-            list-style-type: none;
-            margin-left: 0;
-        }
-        
-        .reveal ul li {
-            margin-bottom: 0.8em;
-            padding-left: 1.5em;
-            position: relative;
-        }
-        
-        .reveal ul li:before {
-            content: "▸";
-            position: absolute;
-            left: 0;
-            color: var(--genii-light-blue);
-            font-weight: bold;
-        }
-        
-        .reveal .slide-background {
-            background: linear-gradient(135deg, var(--genii-blue) 0%, #001a5c 100%);
-        }
-        
-        .reveal section {
-            padding: 2em;
-        }
-        
-        .reveal .title-slide {
-            text-align: center;
-        }
-        
-        .reveal .title-slide h1 {
-            font-size: 5em;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.2em;
-        }
-        
-        .reveal .title-slide .subtitle {
-            font-size: 2em;
-            color: var(--genii-light-blue);
-            margin-bottom: 2em;
-        }
-        
-        .reveal .title-slide .confidential {
-            font-size: 1.2em;
-            color: #999;
-            margin-top: 3em;
-        }
-        
-        .reveal .highlight {
-            color: var(--genii-light-blue);
-            font-weight: bold;
-        }
-        
-        .reveal .big-number {
-            font-size: 2.5em;
-            color: var(--genii-light-blue);
-            font-weight: bold;
-            display: block;
-            margin: 0.3em 0;
-        }
-        
-        .reveal .pipeline {
-            background: rgba(255, 255, 255, 0.1);
-            border-left: 5px solid var(--genii-light-blue);
-            padding: 1.5em;
-            margin: 1em 0;
-            border-radius: 8px;
-        }
-        
-        .reveal .revenue-layer {
-            background: rgba(0, 85, 204, 0.2);
-            padding: 1em;
-            margin: 0.5em 0;
-            border-radius: 5px;
-            border-left: 3px solid var(--genii-light-blue);
-        }
-        
-        .reveal .vs-section {
-            display: inline-block;
-            width: 45%;
-            vertical-align: top;
-            margin: 1em 0;
-        }
-        
-        .reveal .vs-divider {
-            display: inline-block;
-            width: 8%;
-            text-align: center;
-            font-size: 2em;
-            color: var(--genii-light-blue);
-            vertical-align: middle;
-        }
-        
-        .reveal .vision-quote {
-            font-size: 1.8em;
-            font-style: italic;
-            color: var(--genii-light-blue);
-            text-align: center;
-            margin: 1em 0;
-            padding: 1em;
-            border-top: 2px solid var(--genii-white);
-            border-bottom: 2px solid var(--genii-white);
-        }
-        
-        .reveal .tagline {
-            font-size: 1.5em;
-            text-align: center;
-            color: var(--genii-white);
-            margin-top: 1.5em;
-            font-weight: 300;
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 51, 153, 0.15);
         }
     </style>
 </head>
-<body>
-    <div class="reveal">
-        <div class="slides">
-            
-            <!-- Slide 1: Title -->
-            <section class="title-slide">
-                <h1>GENII</h1>
-                <p class="subtitle">A New Kind of Housing Company</p>
-                <p class="confidential">Confidential — March 2026</p>
-            </section>
-            
-            <!-- Slide 2: The Problem -->
-            <section>
-                <h2>The Problem</h2>
-                <p class="big-number">$5 Trillion</p>
-                <p>Housing is the last <span class="highlight">$5T industry</span> that hasn't been platform-ified.</p>
-                <ul>
-                    <li>Fragmented across thousands of local operators</li>
-                    <li>Slow, opaque processes with zero technology leverage</li>
-                    <li>Traditional homebuilding = <span class="highlight">low margins</span>, limited scale</li>
-                    <li>No coordination layer connecting capital, land, manufacturing, and permits</li>
-                </ul>
-            </section>
-            
-            <!-- Slide 3: The Solution -->
-            <section>
-                <h2>The Solution</h2>
-                <h3>Genii OS coordinates all stakeholders through one system</h3>
-                <ul>
-                    <li><span class="highlight">Land acquisition</span> — Streamlined intake and underwriting</li>
-                    <li><span class="highlight">Capital deployment</span> — Match projects with funding sources</li>
-                    <li><span class="highlight">Manufacturing network</span> — Connect to modular factories</li>
-                    <li><span class="highlight">Permit automation</span> — Navigate regulatory landscape at scale</li>
-                </ul>
-                <p style="margin-top: 1.5em; font-size: 1.4em;">A <span class="highlight">unified platform</span> for a <span class="highlight">scalable network</span>.</p>
-            </section>
-            
-            <!-- Slide 4: The Market -->
-            <section>
-                <h2>The Market</h2>
-                <p class="big-number">2M+ homes/year</p>
-                <p>Annual housing need in the United States</p>
-                <p class="big-number">$500B+</p>
-                <p>Annual construction spend</p>
-                <ul style="margin-top: 1em;">
-                    <li><span class="highlight">Zero dominant players</span> — No platform coordination layer exists</li>
-                    <li><span class="highlight">Massive regulatory tailwinds</span> — SB 684, SB 9, density bonus laws</li>
-                    <li>California alone needs <span class="highlight">2.5M+ homes by 2030</span></li>
-                </ul>
-            </section>
-            
-            <!-- Slide 5: The Product -->
-            <section>
-                <h2>The Product</h2>
-                <h3>Full Stack Coordination Pipeline</h3>
-                <div class="pipeline">
-                    <p><span class="highlight">1. Land Intake</span> → Automated valuation and feasibility analysis</p>
-                </div>
-                <div class="pipeline">
-                    <p><span class="highlight">2. Auto-Permitting</span> → Regulatory pathway mapping and submission</p>
-                </div>
-                <div class="pipeline">
-                    <p><span class="highlight">3. Capital Match</span> → Connect projects to debt and equity partners</p>
-                </div>
-                <div class="pipeline">
-                    <p><span class="highlight">4. Factory Assignment</span> → Route to manufacturing partners</p>
-                </div>
-                <div class="pipeline">
-                    <p><span class="highlight">5. Construction → Sale/Rent</span> → Deliver and manage properties</p>
-                </div>
-            </section>
-            
-            <!-- Slide 6: Business Model -->
-            <section>
-                <h2>Business Model</h2>
-                <h3>Platform Fees + SaaS + Carry</h3>
-                <div class="revenue-layer">
-                    <strong>Genii OS (SaaS)</strong> — Per-project subscription and coordination fees
-                </div>
-                <div class="revenue-layer">
-                    <strong>Capital Marketplace</strong> — 2-4% origination on debt and equity placement
-                </div>
-                <div class="revenue-layer">
-                    <strong>Manufacturer Network</strong> — 10-15% markup on factory coordination
-                </div>
-                <div class="revenue-layer">
-                    <strong>Land Pipeline</strong> — JV equity stakes in select projects
-                </div>
-                <div class="revenue-layer">
-                    <strong>Property Management</strong> — 8-10% recurring revenue on rental assets
-                </div>
-                <p style="margin-top: 1.5em; font-size: 1.4em;">Path to <span class="highlight">70%+ gross margins</span> at scale</p>
-            </section>
-            
-            <!-- Slide 7: Traction -->
-            <section>
-                <h2>Traction</h2>
-                <ul>
-                    <li><span class="highlight">Active California projects</span> in pipeline with entitlements in progress</li>
-                    <li><span class="highlight">Manufacturer partnerships signed</span> with modular housing factories</li>
-                    <li><span class="highlight">Land pipeline growing</span> through proprietary sourcing channels</li>
-                    <li><span class="highlight">Regulatory pathways validated</span> in multiple jurisdictions</li>
-                    <li>Early customer conversations with <span class="highlight">developers, investors, and municipalities</span></li>
-                </ul>
-            </section>
-            
-            <!-- Slide 8: Competition -->
-            <section>
-                <h2>Competition</h2>
-                <div class="vs-section">
-                    <h3>Traditional Builders</h3>
-                    <ul style="font-size: 0.9em;">
-                        <li>Low margins (10-15%)</li>
-                        <li>Local, not scalable</li>
-                        <li>No technology leverage</li>
-                        <li>Manual processes</li>
-                    </ul>
-                </div>
-                <div class="vs-divider">VS</div>
-                <div class="vs-section">
-                    <h3>Proptech</h3>
-                    <ul style="font-size: 0.9em;">
-                        <li>Software only</li>
-                        <li>No execution capability</li>
-                        <li>No capital deployment</li>
-                        <li>Limited network effects</li>
-                    </ul>
-                </div>
-                <p style="margin-top: 2em; font-size: 1.5em; text-align: center;">
-                    <span class="highlight">Genii does both</span> — Software + Operations
-                </p>
-            </section>
-            
-            <!-- Slide 9: The Team -->
-            <section>
-                <h2>The Team</h2>
-                <p style="font-size: 1.4em; margin-bottom: 1em;">
-                    Lean founding team operating at <span class="highlight">national scale</span> through a coordinated network
-                </p>
-                <ul>
-                    <li><span class="highlight">Licensed engineers</span> engaged per project for structural and site work</li>
-                    <li><span class="highlight">General contractors</span> with modular housing expertise</li>
-                    <li><span class="highlight">Manufacturing partners</span> across multiple states</li>
-                    <li><span class="highlight">Capital partners</span> ready to deploy on qualified projects</li>
-                </ul>
-                <p style="margin-top: 1.5em; font-size: 1.3em;">
-                    Structured for <span class="highlight">margin and scale</span> — not headcount
-                </p>
-            </section>
-            
-            <!-- Slide 10: The Ask & Vision -->
-            <section>
-                <h2>The Ask & Vision</h2>
-                <h3>Raising Pre-Seed to Fund:</h3>
-                <ul>
-                    <li><span class="highlight">10 units entitled</span> across California markets</li>
-                    <li><span class="highlight">2 manufacturer partnerships</span> formalized with production capacity</li>
-                    <li><span class="highlight">50 deals in pipeline</span> — land intake and feasibility underway</li>
-                </ul>
-                <div class="vision-quote">
-                    "In 10 years, Genii will have coordinated 100,000+ homes.<br>
-                    We'll be the infrastructure layer for American housing."
-                </div>
-                <p class="tagline">
-                    We don't build homes.<br>
-                    <span class="highlight">We build the system that builds homes.</span>
-                </p>
-            </section>
-            
+<body class="antialiased text-gray-900">
+
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto text-center text-white">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                Building the Operating System<br/>for American Housing
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-12 text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                Genii coordinates land, capital, manufacturers, and permits through a unified platform
+            </p>
+            <a href="#problem" class="inline-block bg-white text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors shadow-lg">
+                View Deck
+            </a>
         </div>
-    </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.js"></script>
-    <script>
-        Reveal.initialize({
-            hash: true,
-            transition: 'slide',
-            backgroundTransition: 'fade',
-            controls: true,
-            progress: true,
-            center: false,
-            slideNumber: 'c/t',
-            showSlideNumber: 'speaker',
-            width: 1920,
-            height: 1080,
-            margin: 0.04,
-            minScale: 0.2,
-            maxScale: 2.0
-        });
-    </script>
+    </section>
+
+    <!-- The Problem Section -->
+    <section id="problem" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16 text-primary">
+                The Problem
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-8 bg-gray-50 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Fragmented</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Developers juggle 20+ vendors across land, capital, manufacturing, and permits with no unified workflow
+                    </p>
+                </div>
+                <div class="text-center p-8 bg-gray-50 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Slow</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Projects take 18-36 months from land acquisition to first tenant, with months lost to coordination overhead
+                    </p>
+                </div>
+                <div class="text-center p-8 bg-gray-50 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Opaque</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Zero real-time visibility into project health, capital deployment, or entitlement status across portfolios
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Solution Section -->
+    <section id="solution" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 text-primary">
+                The Solution
+            </h2>
+            <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+                The Android of Housing
+            </p>
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                <div class="space-y-6">
+                    <div class="border-l-4 border-primary pl-6 py-4 bg-blue-50 rounded-r-lg">
+                        <h3 class="text-xl font-bold mb-2 text-primary">Application Layer</h3>
+                        <p class="text-gray-700">Project dashboards, analytics, investor portals, compliance tracking</p>
+                    </div>
+                    <div class="border-l-4 border-primary-light pl-6 py-4 bg-blue-50 rounded-r-lg">
+                        <h3 class="text-xl font-bold mb-2 text-primary">Orchestration Layer</h3>
+                        <p class="text-gray-700">Workflow automation, vendor coordination, permit tracking, capital deployment</p>
+                    </div>
+                    <div class="border-l-4 border-blue-600 pl-6 py-4 bg-blue-50 rounded-r-lg">
+                        <h3 class="text-xl font-bold mb-2 text-primary">Platform Layer (Genii OS)</h3>
+                        <p class="text-gray-700">Unified API connecting land pipeline, manufacturer network, capital marketplace, entitlement engine</p>
+                    </div>
+                    <div class="border-l-4 border-blue-700 pl-6 py-4 bg-blue-50 rounded-r-lg">
+                        <h3 class="text-xl font-bold mb-2 text-primary">Infrastructure Layer</h3>
+                        <p class="text-gray-700">Real-time data sync, multi-tenant architecture, security & compliance, integrations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Model Section -->
+    <section id="business-model" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16 text-primary">
+                Business Model
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 card-hover border-2 border-primary">
+                    <div class="text-primary font-bold text-sm mb-2">PLATFORM</div>
+                    <h3 class="text-2xl font-bold mb-3">Genii OS</h3>
+                    <div class="text-3xl font-bold text-primary mb-2">SaaS</div>
+                    <p class="text-gray-600">Per-project licensing for developers and operators</p>
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 card-hover border-2 border-primary">
+                    <div class="text-primary font-bold text-sm mb-2">CAPITAL</div>
+                    <h3 class="text-2xl font-bold mb-3">Marketplace</h3>
+                    <div class="text-3xl font-bold text-primary mb-2">2-4%</div>
+                    <p class="text-gray-600">Transaction fee on capital matching</p>
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 card-hover border-2 border-primary">
+                    <div class="text-primary font-bold text-sm mb-2">SUPPLY</div>
+                    <h3 class="text-2xl font-bold mb-3">Manufacturer Network</h3>
+                    <div class="text-3xl font-bold text-primary mb-2">15%</div>
+                    <p class="text-gray-600">Markup on modular unit procurement</p>
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 card-hover border-2 border-primary">
+                    <div class="text-primary font-bold text-sm mb-2">LAND</div>
+                    <h3 class="text-2xl font-bold mb-3">Pipeline</h3>
+                    <div class="text-3xl font-bold text-primary mb-2">JV Equity</div>
+                    <p class="text-gray-600">Co-investment in entitled parcels</p>
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 card-hover border-2 border-primary">
+                    <div class="text-primary font-bold text-sm mb-2">OPERATIONS</div>
+                    <h3 class="text-2xl font-bold mb-3">Property Management</h3>
+                    <div class="text-3xl font-bold text-primary mb-2">8%</div>
+                    <p class="text-gray-600">Of monthly rental income</p>
+                </div>
+                <div class="bg-gradient-to-br from-primary to-primary-dark rounded-xl p-6 card-hover text-white">
+                    <div class="font-bold text-sm mb-2 text-blue-200">EXPANSION</div>
+                    <h3 class="text-2xl font-bold mb-3">Future Revenue</h3>
+                    <div class="text-3xl font-bold mb-2">+3 Streams</div>
+                    <p class="text-blue-100">Insurance, financing, energy/IoT services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Opportunity Section -->
+    <section id="market" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16 text-primary">
+                Market Opportunity
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="text-5xl md:text-6xl font-bold text-primary mb-4">$5T</div>
+                    <p class="text-xl text-gray-700">U.S. housing market</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl md:text-6xl font-bold text-primary mb-4">2M</div>
+                    <p class="text-xl text-gray-700">Homes needed annually</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl md:text-6xl font-bold text-primary mb-4">Zero</div>
+                    <p class="text-xl text-gray-700">Dominant platform players</p>
+                </div>
+            </div>
+            <div class="mt-16 bg-white rounded-2xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold mb-6 text-center">Why Now?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold">1</div>
+                        <div>
+                            <h4 class="font-bold mb-2">Regulatory Tailwinds</h4>
+                            <p class="text-gray-600">States loosening ADU/modular restrictions</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold">2</div>
+                        <div>
+                            <h4 class="font-bold mb-2">Manufacturing Maturity</h4>
+                            <p class="text-gray-600">Modular housing quality at cost parity</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold">3</div>
+                        <div>
+                            <h4 class="font-bold mb-2">Capital Abundance</h4>
+                            <p class="text-gray-600">$100B+ seeking housing exposure</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold">4</div>
+                        <div>
+                            <h4 class="font-bold mb-2">Tech Enablement</h4>
+                            <p class="text-gray-600">APIs, automation, real-time coordination possible</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traction Section -->
+    <section id="traction" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16 text-primary">
+                Traction
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-blue-50 rounded-xl p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-primary">Active Projects</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Multiple parcels under evaluation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Platform architecture in production</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Workflow automation live</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-blue-50 rounded-xl p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-primary">Entitlements in Progress</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>ADU permit applications filed</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Municipal partnerships established</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Zoning analysis tools deployed</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-blue-50 rounded-xl p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-primary">Strategic Partnerships</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Modular manufacturer relationships</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Capital partner network forming</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Technology integrations underway</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-blue-50 rounded-xl p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-primary">Platform Milestones</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Real-time project dashboards</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Automated compliance tracking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Multi-tenant architecture live</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 text-primary">
+                Team
+            </h2>
+            <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+                Led by experienced founder with deep expertise in real estate technology and platform development
+            </p>
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-12">
+                <div class="text-center mb-8">
+                    <div class="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl font-bold text-white">DS</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">David Schy</h3>
+                    <p class="text-primary font-semibold mb-4">Founder & CEO</p>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Serial entrepreneur with expertise in platform development, real estate operations, and enterprise software. 
+                        Building the infrastructure layer for the future of American housing.
+                    </p>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h3 class="text-2xl font-bold mb-6 text-center">Specialist Network</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <p class="font-semibold">Real Estate</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <p class="font-semibold">Capital Markets</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+                            </svg>
+                        </div>
+                        <p class="font-semibold">Manufacturing</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                            </svg>
+                        </div>
+                        <p class="font-semibold">Technology</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-primary">
+                Let's Build the Future of Housing
+            </h2>
+            <p class="text-xl text-gray-600 mb-12">
+                Join us in creating the infrastructure layer for American housing development
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="mailto:david@geniinow.com" class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-dark transition-colors shadow-lg">
+                    Contact Us
+                </a>
+                <a href="mailto:david@geniinow.com?subject=Investment%20Meeting%20Request" class="inline-block bg-white text-primary border-2 border-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors">
+                    Schedule a Meeting
+                </a>
+            </div>
+            <div class="mt-12 text-gray-600">
+                <p class="mb-2">David Schy, Founder & CEO</p>
+                <p><a href="mailto:david@geniinow.com" class="text-primary hover:underline">david@geniinow.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg py-8 px-4">
+        <div class="max-w-6xl mx-auto text-center text-white">
+            <p class="text-sm">&copy; 2026 Genii. Building the Operating System for American Housing.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
